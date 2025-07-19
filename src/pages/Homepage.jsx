@@ -5,7 +5,7 @@ import PageNav from "../components/PageNav";
 export default function Homepage() {
   return (
     <main className={styles.homepage}>
-      <PageNav></PageNav>
+      <PageNav />
       <section>
         <h1>
           You travel the world.
