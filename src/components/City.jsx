@@ -1,12 +1,5 @@
 import styles from "./styles/City.module.css";
-
-const formatDate = (date) =>
-  new Intl.DateTimeFormat("en", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    weekday: "long",
-  }).format(new Date(date));
+import { formatDateWithWeekday } from "../helpers/formatter";
 
 function City() {
   // TEMP DATA
@@ -30,7 +23,7 @@ function City() {
 
       <div className={styles.row}>
         <h6>You went to {cityName} on</h6>
-        <p>{formatDate(date || null)}</p>
+        <p>{formatDateWithWeekday(date || null)}</p>
       </div>
 
       {notes && (

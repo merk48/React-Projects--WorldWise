@@ -1,9 +1,10 @@
+import { Twemoji } from "react-emoji-render";
 import styles from "./styles/CountryItem.module.css";
 
 function CountryItem({ country }) {
   return (
     <li className={styles.countryItem}>
-      <span>{country.emoji}</span>
+      <Twemoji text={country.emoji} />
       <span>{country.country}</span>
     </li>
   );
