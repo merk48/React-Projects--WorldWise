@@ -11,10 +11,17 @@ import {
 import { useEffect, useState } from "react";
 import { UseCities } from "../contexts/cities";
 import { Twemoji } from "react-emoji-render";
+import { useGeolocation } from "../hooks/useGeolocation";
+import Button from "./Button";
 
 function Map() {
   const { cities } = UseCities();
   const [mapPosition, setMapPosition] = useState([40, 0]);
+  const {
+    isLoading: isLoadingPosition,
+    position: geoLocationPosition,
+    getPosition,
+  } = useGeolocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const [mapLat, mapLng] = [searchParams.get("lat"), searchParams.get("lng")];
 
@@ -23,8 +30,18 @@ function Map() {
     setMapPosition([mapLat, mapLng]);
   }, [mapLat, mapLng]);
 
+  useEffect(() => {
+    if (!geoLocationPosition) return;
+    setMapPosition([geoLocationPosition.lat, geoLocationPosition.lng]);
+  }, [geoLocationPosition]);
+
   return (
     <div className={styles.mapContainer}>
+      {!geoLocationPosition && (
+        <Button type="position" onClick={getPosition}>
+          {isLoadingPosition ? "Loading..." : "Use your position"}
+        </Button>
+      )}
       <MapContainer
         className={styles.map}
         center={mapPosition}
