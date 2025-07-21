@@ -10,28 +10,36 @@ import CityList from "./components/CityList";
 import CountriesList from "./components/CountriesList";
 import City from "./components/City";
 import Form from "./components/Form";
+import { CurrentCityProvider } from "./contexts/currentCity";
 
 function App() {
   return (
-    <CitiesProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<Homepage />} />
-          <Route path="product" element={<Product />} />
-          <Route path="pricing" element={<Pricing />} />
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Homepage />} />
+        <Route path="product" element={<Product />} />
+        <Route path="pricing" element={<Pricing />} />
+        <Route path="*" element={<PageNotFound />} />
+        <Route path="login" element={<Login />} />
+        <Route
+          path="app"
+          element={
+            <CitiesProvider>
+              <CurrentCityProvider>
+                <AppLayout />
+              </CurrentCityProvider>
+            </CitiesProvider>
+          }
+        >
+          <Route index element={<Navigate replace to="cities" />} />
+          <Route path="cities" element={<CityList />} />
+          <Route path="cities/:id" element={<City />} />
+          <Route path="countries" element={<CountriesList />} />
+          <Route path="form" element={<Form />} />
           <Route path="*" element={<PageNotFound />} />
-          <Route path="login" element={<Login />} />
-          <Route path="app" element={<AppLayout />}>
-            <Route index element={<Navigate replace to="cities" />} />
-            <Route path="cities" element={<CityList />} />
-            <Route path="countries" element={<CountriesList />} />
-            <Route path="cities/:id" element={<City />} />
-            <Route path="form" element={<Form />} />
-            <Route path="*" element={<PageNotFound />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </CitiesProvider>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

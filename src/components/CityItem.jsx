@@ -2,13 +2,18 @@ import { Twemoji } from "react-emoji-render";
 import styles from "./styles/CityItem.module.css";
 import { formatDate } from "../helpers/formatter";
 import { Link } from "react-router-dom";
+import { UseCurrentCity } from "../contexts/currentCity";
 
 function CityItem({ city }) {
   const { id, cityName, emoji, date, position } = city;
+  const { currentCity } = UseCurrentCity();
+
   return (
     <li>
       <Link
-        className={styles.cityItem}
+        className={`${styles.cityItem} ${
+          currentCity.id === id ? styles["cityItem--active"] : ""
+        }`}
         to={`${id}?lat=${position.lat}&lng=${position.lng}`}
       >
         <Twemoji className={styles.emoji} text={emoji} />
