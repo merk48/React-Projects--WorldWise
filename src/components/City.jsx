@@ -1,7 +1,36 @@
+import { useParams, useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import styles from "./styles/City.module.css";
 import { formatDateWithWeekday } from "../helpers/formatter";
+import { BASE_URL } from "../helpers/config";
+import { Twemoji } from "react-emoji-render";
 
 function City() {
+  const [city, setCity] = useState({});
+  const { id } = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [lat, lng] = [searchParams.get("lat"), searchParams.get("lng")];
+
+  useEffect(() => {
+    async function fetchCities() {
+      try {
+        // setIsLoading(true);
+
+        const res = await fetch(`${BASE_URL}/cities/${id}`);
+        const data = await res.json();
+
+        setCity(data);
+        console.log(data);
+      } catch (err) {
+        alert(err);
+      } finally {
+        // setIsLoading(false);
+      }
+    }
+
+    fetchCities();
+  }, []);
+
   // TEMP DATA
   const currentCity = {
     cityName: "Lisbon",
@@ -17,7 +46,8 @@ function City() {
       <div className={styles.row}>
         <h6>City name</h6>
         <h3>
-          <span>{emoji}</span> {cityName}
+          <Twemoji className={styles.emoji} text={emoji} />
+          {cityName}
         </h3>
       </div>
 
@@ -44,9 +74,9 @@ function City() {
         </a>
       </div>
 
-      <div>
+      {/* <div>
         <ButtonBack />
-      </div>
+      </div> */}
     </div>
   );
 }

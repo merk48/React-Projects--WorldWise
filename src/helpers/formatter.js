@@ -5,7 +5,7 @@ export const formatDate = (date) =>
     year: "numeric",
   }).format(new Date(date));
 
-const formatDateWithWeekday = (date) =>
+export const formatDateWithWeekday = (date) =>
   new Intl.DateTimeFormat("en", {
     day: "numeric",
     month: "long",
