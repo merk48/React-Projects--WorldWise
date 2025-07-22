@@ -1,14 +1,24 @@
 import styles from "./styles/City.module.css";
 import { formatDateWithWeekday } from "../helpers/formatter";
 import { Twemoji } from "react-emoji-render";
-import { UseCurrentCity } from "../contexts/currentCity";
 import Spinner from "./Spinner";
 import BackButton from "./BackButton";
+import { UseCities } from "../contexts/cities/CitiesContext";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 function City() {
-  const { currentCity, isLoading } = UseCurrentCity();
-  const { cityName, emoji, date, notes } = currentCity;
+  const { id } = useParams();
+  const { getCity, currentCity, isLoading } = UseCities();
 
+  useEffect(
+    function () {
+      getCity(id);
+    },
+    [id]
+  );
+
+  const { cityName, emoji, date, notes } = currentCity;
   return (
     <>
       {isLoading ? (

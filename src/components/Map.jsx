@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
 import styles from "./styles/Map.module.css";
 import {
@@ -9,7 +10,7 @@ import {
   useMapEvent,
 } from "react-leaflet";
 import { useEffect, useState } from "react";
-import { UseCities } from "../contexts/cities";
+import { UseCities } from "../contexts/cities/CitiesContext";
 import { Twemoji } from "react-emoji-render";
 import { useGeolocation } from "../hooks/useGeolocation";
 import Button from "./Button";

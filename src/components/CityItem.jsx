@@ -1,18 +1,18 @@
+/* eslint-disable react/prop-types */
 import { Twemoji } from "react-emoji-render";
 import styles from "./styles/CityItem.module.css";
 import { formatDate } from "../helpers/formatter";
 import { Link } from "react-router-dom";
-import { UseCurrentCity } from "../contexts/currentCity";
-import { UseCities } from "../contexts/cities";
-
+import { UseCities } from "../contexts/cities/CitiesContext";
 function CityItem({ city }) {
+  const { currentCity, deleteCity } = UseCities();
   const { id, cityName, emoji, date, position } = city;
-  const { currentCity } = UseCurrentCity();
-  const { deleteCity } = UseCities();
 
   async function handleClick(e) {
     e.preventDefault();
+    console.log("start");
     await deleteCity(id);
+    console.log("emd");
   }
 
   return (

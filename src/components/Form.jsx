@@ -12,7 +12,7 @@ import { GEOCODING_URL } from "../helpers/config";
 import Message from "./Message";
 import Spinner from "./Spinner";
 import { convertToEmoji } from "../helpers/formatter";
-import { UseCities } from "../contexts/cities";
+import { UseCities } from "../contexts/cities/CitiesContext";
 
 function Form() {
   const navigate = useNavigate();

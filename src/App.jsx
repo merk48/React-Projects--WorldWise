@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { CitiesProvider } from "./contexts/cities";
+import { CitiesProvider } from "./contexts/cities/CitiesContext";
 import Product from "./pages/Product";
 import Homepage from "./pages/Homepage";
 import Pricing from "./pages/Pricing";
@@ -10,7 +10,6 @@ import CityList from "./components/CityList";
 import CountriesList from "./components/CountriesList";
 import City from "./components/City";
 import Form from "./components/Form";
-import { CurrentCityProvider } from "./contexts/currentCity";
 
 function App() {
   return (
@@ -25,9 +24,7 @@ function App() {
           path="app"
           element={
             <CitiesProvider>
-              <CurrentCityProvider>
-                <AppLayout />
-              </CurrentCityProvider>
+              <AppLayout />
             </CitiesProvider>
           }
         >
