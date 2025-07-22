@@ -10,7 +10,7 @@
         "lat": 38.727881642324164,
         "lng": -9.140900099907554
       },
-      "id": 73930385
+      "id": "73930385"
     },
     {
       "cityName": "Madrid",
@@ -22,7 +22,7 @@
         "lat": 40.46635901755316,
         "lng": -3.7133789062500004
       },
-      "id": 17806751
+      "id": "17806751"
     },
     {
       "cityName": "Berlin",
@@ -34,7 +34,115 @@
         "lat": 52.53586782505711,
         "lng": 13.376933665713324
       },
-      "id": 98443197
+      "id": "98443197"
+    },
+    {
+      "id": "6f59",
+      "cityName": "Borriol",
+      "date": "2025-07-22T15:56:46.391Z",
+      "emoji": "🇪🇸",
+      "country": "Spain",
+      "notes": "",
+      "position": {
+        "lat": "40.01972715869301",
+        "lng": "-0.12187957763671876"
+      }
+    },
+    {
+      "id": "0830",
+      "cityName": "Alcala de Xivert",
+      "date": "2025-07-22T15:56:53.625Z",
+      "emoji": "🇪🇸",
+      "country": "Spain",
+      "notes": "",
+      "position": {
+        "lat": "40.25856876391262",
+        "lng": "0.18745422363281253"
+      }
+    },
+    {
+      "id": "a8da",
+      "cityName": "Revuca",
+      "date": "2025-07-22T18:47:47.763Z",
+      "emoji": "🇸🇰",
+      "country": "Slovakia",
+      "notes": "",
+      "position": {
+        "lat": "48.69096039092552",
+        "lng": "20.126953125000004"
+      }
+    },
+    {
+      "id": "404f",
+      "cityName": "Killaloe",
+      "date": "2025-07-22T18:47:56.805Z",
+      "emoji": "🇮🇪",
+      "country": "Ireland",
+      "notes": "",
+      "position": {
+        "lat": "53.014783245859235",
+        "lng": "-8.701171875000002"
+      }
+    },
+    {
+      "id": "614f",
+      "cityName": "Castello de la Plana",
+      "date": "2025-07-22T18:49:27.162Z",
+      "emoji": "🇪🇸",
+      "country": "Spain",
+      "notes": "",
+      "position": {
+        "lat": "40.01170749053241",
+        "lng": "-0.08325576782226564"
+      }
+    },
+    {
+      "id": "70e8",
+      "cityName": "Castello de la Plana",
+      "date": "2025-07-22T18:51:14.997Z",
+      "emoji": "🇪🇸",
+      "country": "Spain",
+      "notes": "",
+      "position": {
+        "lat": "40.00079396953218",
+        "lng": "-0.13269424438476565"
+      }
+    },
+    {
+      "id": "07e4",
+      "cityName": "Castello de la Plana",
+      "date": "2025-07-22T18:51:35.258Z",
+      "emoji": "🇪🇸",
+      "country": "Spain",
+      "notes": "",
+      "position": {
+        "lat": "40.021830522193504",
+        "lng": "-0.13767242431640628"
+      }
+    },
+    {
+      "id": "f6a6",
+      "cityName": "Saint-Hippolyte",
+      "date": "2025-07-22T18:51:58.073Z",
+      "emoji": "🇫🇷",
+      "country": "France",
+      "notes": "",
+      "position": {
+        "lat": "47.025206001585396",
+        "lng": "1.1206054687500002"
+      }
+    },
+    {
+      "id": "61ce",
+      "cityName": "Zagan",
+      "date": "2025-07-22T18:52:07.775Z",
+      "emoji": "🇵🇱",
+      "country": "Poland",
+      "notes": "",
+      "position": {
+        "lat": "51.138001488062564",
+        "lng": "10.261230468750002"
+      }
     }
   ]
 }
