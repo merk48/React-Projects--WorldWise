@@ -83,6 +83,42 @@
         "lat": "40.02261926678969",
         "lng": "0.03639221191406251"
       }
+    },
+    {
+      "id": "0d8f",
+      "cityName": "San Bernardino",
+      "date": "2025-07-22T23:00:42.000Z",
+      "emoji": "🇺🇸",
+      "country": "United States of America (the)",
+      "notes": "love  my husandooooooo",
+      "position": {
+        "lat": "34.106687859570954",
+        "lng": "-117.28875160217287"
+      }
+    },
+    {
+      "id": "c173",
+      "cityName": "Gemeente Amsterdam",
+      "date": "2025-07-22T23:01:17.521Z",
+      "emoji": "🇳🇱",
+      "country": "Netherlands (Kingdom of the)",
+      "notes": "",
+      "position": {
+        "lat": "52.37187875234601",
+        "lng": "4.892349243164063"
+      }
+    },
+    {
+      "id": "de1c",
+      "cityName": "Gemeente Amsterdam",
+      "date": "2025-07-22T23:01:19.829Z",
+      "emoji": "🇳🇱",
+      "country": "Netherlands (Kingdom of the)",
+      "notes": "",
+      "position": {
+        "lat": "52.3675734",
+        "lng": "4.9041389"
+      }
     }
   ]
 }
