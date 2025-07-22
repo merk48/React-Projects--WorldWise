@@ -27,13 +27,13 @@ function CitiesProvider({ children }) {
 
   // Create new city
   async function createCity(newCity) {
-    console.log(newCity);
+    if (!newCity) return;
 
     try {
       setIsLoading(true);
 
       const res = await fetch(`${BASE_URL}/cities`, {
-        method: "POST", // ← fix your typo “POSY” → “POST”
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newCity),
       });
@@ -44,22 +44,37 @@ function CitiesProvider({ children }) {
       }
       console.log(data);
 
-      // Append the newly created city to your list
       setCities((cities) => [...cities, data]);
     } catch (err) {
-      console.error("createCity:", err);
-      throw err; // re‑throw so callers can .catch or show UI feedback
+      throw err;
     } finally {
       setIsLoading(false);
     }
   }
-  console.log(cities);
+  async function deleteCity(id) {
+    if (!id) return;
+
+    try {
+      setIsLoading(true);
+
+      await fetch(`${BASE_URL}/cities/${id}`, {
+        method: "DELETE",
+      });
+
+      setCities((cities) => cities.filter((city) => city.id !== id));
+    } catch (err) {
+      throw err;
+    } finally {
+      setIsLoading(false);
+    }
+  }
   return (
     <CitiesContext.Provider
       value={{
         cities,
         isLoading,
         createCity,
+        deleteCity,
       }}
     >
       {children}
