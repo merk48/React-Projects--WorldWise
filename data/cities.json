@@ -49,39 +49,39 @@
       }
     },
     {
-      "id": "4485",
-      "cityName": "Borriol",
-      "date": "2025-07-22T20:17:59.936Z",
-      "emoji": "🇪🇸",
-      "country": "Spain",
+      "id": "0d8f",
+      "cityName": "San Bernardino",
+      "date": "2025-07-22T23:00:42.000Z",
+      "emoji": "🇺🇸",
+      "country": "United States of America (the)",
+      "notes": "love  my husandooooooo",
+      "position": {
+        "lat": "34.106687859570954",
+        "lng": "-117.28875160217287"
+      }
+    },
+    {
+      "id": "c173",
+      "cityName": "Gemeente Amsterdam",
+      "date": "2025-07-22T23:01:17.521Z",
+      "emoji": "🇳🇱",
+      "country": "Netherlands (Kingdom of the)",
       "notes": "",
       "position": {
-        "lat": "40.03786653670635",
-        "lng": "-0.12222290039062501"
+        "lat": "52.37187875234601",
+        "lng": "4.892349243164063"
       }
     },
     {
-      "id": "45eb",
-      "cityName": "Borriol",
-      "date": "2025-07-22T20:20:15.452Z",
-      "emoji": "🇪🇸",
-      "country": "Spain",
-      "notes": "Test",
+      "id": "4a15",
+      "cityName": "An Nashabiyah",
+      "date": "2025-07-23T00:04:09.799Z",
+      "emoji": "🇸🇾",
+      "country": "Syrian Arab Republic (the)",
+      "notes": "Blaaalal",
       "position": {
-        "lat": "40.03168917426762",
-        "lng": "-0.04652023315429688"
-      }
-    },
-    {
-      "id": "e2eb",
-      "cityName": "Benicassim",
-      "date": "2025-07-22T20:21:08.643Z",
-      "emoji": "🇪🇸",
-      "country": "Spain",
-      "notes": "heyt",
-      "position": {
-        "lat": "40.02261926678969",
-        "lng": "0.03639221191406251"
+        "lat": "33.53223722395908",
+        "lng": "36.52954101562501"
       }
     }
   ]
