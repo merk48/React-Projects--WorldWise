@@ -12,6 +12,7 @@ import CityList from "./components/CityList";
 import CountriesList from "./components/CountriesList";
 import City from "./components/City";
 import Form from "./components/Form";
+import ProtectedRoute from "./pages/protectedRoute";
 
 function App() {
   return (
@@ -26,9 +27,11 @@ function App() {
           <Route
             path="app"
             element={
-              <CitiesProvider>
-                <AppLayout />
-              </CitiesProvider>
+              <ProtectedRoute>
+                <CitiesProvider>
+                  <AppLayout />
+                </CitiesProvider>
+              </ProtectedRoute>
             }
           >
             <Route index element={<Navigate replace to="cities" />} />
