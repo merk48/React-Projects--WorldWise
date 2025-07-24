@@ -1,5 +1,11 @@
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useReducer,
+} from "react";
 import { BASE_URL } from "../../helpers/config";
 
 const CitiesContext = createContext();
@@ -78,26 +84,29 @@ function CitiesProvider({ children }) {
     fetchCities();
   }, []);
 
-  async function getCity(id) {
-    if (!id) return;
+  const getCity = useCallback(
+    async function getCity(id) {
+      if (!id) return;
 
-    if (Number(id) === currentCity.id) return;
+      if (Number(id) === currentCity.id) return;
 
-    dispatch({ type: "loading" });
+      dispatch({ type: "loading" });
 
-    try {
-      const res = await fetch(`${BASE_URL}/cities/${id}`);
-      const data = await res.json();
+      try {
+        const res = await fetch(`${BASE_URL}/cities/${id}`);
+        const data = await res.json();
 
-      if (!data || Object.keys(data).length === 0) {
-        throw new Error("Empty city object received.");
+        if (!data || Object.keys(data).length === 0) {
+          throw new Error("Empty city object received.");
+        }
+
+        dispatch({ type: "city/loaded", payload: data });
+      } catch (err) {
+        dispatch({ type: "rejected", payload: err.message });
       }
-
-      dispatch({ type: "city/loaded", payload: data });
-    } catch (err) {
-      dispatch({ type: "rejected", payload: err.message });
-    }
-  }
+    },
+    [currentCity.id]
+  );
 
   // Create new city
   async function createCity(newCity) {

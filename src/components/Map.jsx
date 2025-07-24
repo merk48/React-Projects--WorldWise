@@ -15,6 +15,7 @@ import { Twemoji } from "react-emoji-render";
 import { useGeolocation } from "../hooks/useGeolocation";
 import Button from "./Button";
 import { useUrlPosition } from "../hooks/useUrlPosition";
+import Message from "./Message";
 
 function Map() {
   const { cities } = UseCities();
@@ -22,6 +23,7 @@ function Map() {
   const {
     isLoading: isLoadingPosition,
     position: geoLocationPosition,
+    error: geoError,
     getPosition,
   } = useGeolocation();
   const [mapLat, mapLng] = useUrlPosition();
@@ -37,6 +39,7 @@ function Map() {
 
   return (
     <div className={styles.mapContainer}>
+      {geoError && <Message message={geoError} />}
       {!geoLocationPosition && (
         <Button type="position" onClick={getPosition}>
           {isLoadingPosition ? "Loading..." : "Use your position"}
